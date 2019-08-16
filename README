@@ -1,0 +1,14 @@
+Java Project for the Parallel Programming Practical (PPP)
+
+
+
+You can compile the Java programs with javac or with ant using the provided build.xml file. Be sure to use the module command on the DAS-4 to prepare your environment; it is recommended to do this in your .bashrc because that correctly sets the environment in prun runs too. For more information see the DAS-4 section.
+To run a parallel program on the DAS nodes, you need to make use of the prun program. Furthermore, to run the application, you can either directly use java or use the provided java-run script in the bin directory, which adds all required jars to the classpath. It expects to find a lib directory in the current directory.
+Example prun commands:
+• sequential on one machine:
+    $ prun -v -1 -np 1 bin/java-run rubiks.sequential.Rubiks ipl
+• version on 8 machines:
+$ prun -v -1 -np 8 bin/java-run rubiks.ipl.Rubiks
+• bonus assignment, 8 machines:
+$ prun -v -1 -np 8 bin/java-run rubiks.bonus.Rubiks
+For more information on compiling and running IPL applications, see the user’s guide and programmer’s manual of the IPL included in the distribution.
